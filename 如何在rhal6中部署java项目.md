@@ -104,5 +104,6 @@
     // 启动Apache服务器
     service httpd start
     
-  
+    // 使用80端口访问Tomcat7目录下项目，如果成功则配置成功，例如Tomcat7中有一个项目叫apk
+    wget http://localhost/apk/
   
