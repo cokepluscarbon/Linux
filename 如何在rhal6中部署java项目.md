@@ -65,11 +65,12 @@
     
     // 在/etc/httpd/conf目录创建mod_jk.conf和workers.properties两个文件,并按需要需求相关参数
   内容如下
+  
   mod_jk.conf：
-
-  # 指出mod_jk模块工作所需要的工作文件workers.properties的位置<br>
-  JkWorkersFile /etc/httpd/conf/workers.properties <br>
-  # Where to put jk logs<br>
+  
+>  # 指出mod_jk模块工作所需要的工作文件workers.properties的位置<br>
+>  JkWorkersFile /etc/httpd/conf/workers.properties <br>
+>  # Where to put jk logs<br>
   JkLogFile /etc/httpd/logs/mod_jk.log <br>
   # Set the jk log level [debug/error/info] <br>
   JkLogLevel info <br>
@@ -84,9 +85,9 @@
     
   workers.properties： 
   
-  # Defining a worker named worker1 and of type ajp13 <br>
-  worker.list=worker1 <br>
-  # Set properties for worker1 <br>
+>  # Defining a worker named worker1 and of type ajp13 <br>
+>  worker.list=worker1 <br>
+>  # Set properties for worker1 <br>
   worker.worker1.type=ajp13 <br>
   worker.worker1.host=localhost <br>
   worker.worker1.port=8009 <br>
