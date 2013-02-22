@@ -44,7 +44,9 @@
 
 ##3.安装Tomcat-connector
   由于一个机器中，可能运行Apache、Tomcat、nginx等web服务器，我们可以使用Apache作为代理服务器，这样运行在同一台机器上的web服务器就可以共享80端口，并且可以进行负载均衡。
+  
   要Apache和Tomcat进行整合，我们要用到Apache到Tocmat的连接器:Tocmat-connector。
+  
   为了方便，我们使用使用rhal6默认的Apache服务器。
   
     // 下载Tocmat-connector
@@ -65,34 +67,34 @@
   内容如下
   mod_jk.conf：
 
-  # 指出mod_jk模块工作所需要的工作文件workers.properties的位置 
-  JkWorkersFile /etc/httpd/conf/workers.properties 
-  # Where to put jk logs 
-  JkLogFile /etc/httpd/logs/mod_jk.log 
-  # Set the jk log level [debug/error/info] 
-  JkLogLevel info 
-  # Select the log format 
-  JkLogStampFormat "[%a %b %d %H:%M:%S %Y]" 
-  # JkOptions indicate to send SSL KEY SIZE, 
-  JkOptions +ForwardKeySize +ForwardURICompat -ForwardDirectories 
-  # JkRequestLogFormat set the request format 
-  JkRequestLogFormat "%w %V %T" 
-  # 将指定URL请求通过ajp13的协议送给Tomcat 
-  JkMount /apk/* worker1
+  # 指出mod_jk模块工作所需要的工作文件workers.properties的位置<br>
+  JkWorkersFile /etc/httpd/conf/workers.properties <br>
+  # Where to put jk logs<br>
+  JkLogFile /etc/httpd/logs/mod_jk.log <br>
+  # Set the jk log level [debug/error/info] <br>
+  JkLogLevel info <br>
+  # Select the log format <br>
+  JkLogStampFormat "[%a %b %d %H:%M:%S %Y]" <br>
+  # JkOptions indicate to send SSL KEY SIZE, <br>
+  JkOptions +ForwardKeySize +ForwardURICompat -ForwardDirectories <br>
+  # JkRequestLogFormat set the request format <br>
+  JkRequestLogFormat "%w %V %T" <br>
+  # 将指定URL请求通过ajp13的协议送给Tomcat <br>
+  JkMount /apk/* worker1<br>
     
   workers.properties： 
   
-  # Defining a worker named worker1 and of type ajp13 
-  worker.list=worker1 
-  # Set properties for worker1 
-  worker.worker1.type=ajp13 
-  worker.worker1.host=localhost 
-  worker.worker1.port=8009 
-  worker.worker1.lbfactor=50 
-  worker.worker1.cachesize=10 
-  worker.worker1.cache_timeout=600 
-  worker.worker1.socket_keepalive=1 
-  worker.worker1.socket_timeout=300
+  # Defining a worker named worker1 and of type ajp13 <br>
+  worker.list=worker1 <br>
+  # Set properties for worker1 <br>
+  worker.worker1.type=ajp13 <br>
+  worker.worker1.host=localhost <br>
+  worker.worker1.port=8009 <br>
+  worker.worker1.lbfactor=50 <br>
+  worker.worker1.cachesize=10 <br>
+  worker.worker1.cache_timeout=600 <br>
+  worker.worker1.socket_keepalive=1 <br>
+  worker.worker1.socket_timeout=300<br>
     
     //在/etc/http/conf/httpd.conf文件末尾添加一下内容
     LoadModule jk_module modules/mod_jk.so 
