@@ -58,7 +58,7 @@
     // 进入解压的目录
     cd omcat-connectors-1.2.37-src/native
     // 编译，arhal6中Apache的apxs默认在/usr/sbin/目录
-    .configure --with-apsx=/usr/sbin/apxs
+    ./configure --with-apxs=/usr/sbin/apxs
     make
     // 复制mod_jk.so 到 Apache的模块目录
     cp ./apache-2.0/mod_jk.so /etc/httpd/modules
