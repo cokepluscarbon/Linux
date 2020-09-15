@@ -10,7 +10,7 @@ sudo wget https://github.com/opencart/opencart/releases/download/3.0.3.6/opencar
 sudo unzip opencart-3.0.3.6.zip
 sudo mv upload /var/www/html/$hostname
 
-sudo cd /var/www/html/$hostname
+cd /var/www/html/$hostname
 sudo mv config-dist.php config.php
 sudo mv admin/config-dist.php admin/config.php
 
