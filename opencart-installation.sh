@@ -21,7 +21,7 @@ cd ~
 sudo wget https://raw.githubusercontent.com/cokepluscarbon/Web/master/opencart-nginx.conf
 sudo sed -i "s/opencart/$hostname/g" opencart-nginx.conf
 sudo mv opencart-nginx.conf /etc/nginx/sites-available/$hostname-nginx.conf
-sudo ln -s /etc/nginx/sites-available/$hostname.conf /etc/nginx/sites-enabled/
+sudo ln -s /etc/nginx/sites-available/$hostname-nginx.conf /etc/nginx/sites-enabled/
 
 sudo systemctl restart nginx
 sudo systemctl restart php7.4-fpm
