@@ -17,7 +17,7 @@ sudo mv admin/config-dist.php admin/config.php
 sudo chown -R www-data:www-data /var/www/html/$hostname/
 sudo chmod -R 775 /var/www/html/$hostname/
 
-cd
+cd ~
 sudo wget https://raw.githubusercontent.com/cokepluscarbon/Web/master/opencart-nginx.conf
 sudo sed -i "s/opencart/$hostname/g" opencart-nginx.conf
 sudo mv opencart-nginx.conf /etc/nginx/sites-available/$hostname-nginx.conf
