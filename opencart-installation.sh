@@ -6,7 +6,7 @@ sudo apt-get update -y
 sudo apt-get upgrade -y
 sudo apt-get install nginx mariadb-server php-common php-cli php-fpm php-opcache php-gd php-mysql php-curl php-intl php-xsl php-mbstring php-zip php-bcmath php-soap unzip git -y
 
-sudo wet https://github.com/opencart/opencart/releases/download/3.0.3.6/opencart-3.0.3.6.zip
+sudo wget https://github.com/opencart/opencart/releases/download/3.0.3.6/opencart-3.0.3.6.zip
 sudo unzip opencart-3.0.3.6.zip
 sudo mv upload /var/www/html/$hostname
 
