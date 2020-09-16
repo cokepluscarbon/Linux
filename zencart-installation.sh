@@ -20,7 +20,7 @@ sudo ln -s /etc/nginx/sites-available/$hostname-nginx.conf /etc/nginx/sites-enab
 
 cd /var/www/html/$hostname
 sudo mv includes/dist-configure.php includes/configure.php
-sudo mv admin/includes/dist-configure.php includes/configure.php
+sudo mv admin/includes/dist-configure.php admin/includes/includes/configure.php
 
 sudo chmod -R 777 /var/www/html/$hostname
 sudo chmod 644 /var/www/html/$hostname/includes/configure.php
