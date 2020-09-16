@@ -23,8 +23,6 @@ sudo mv includes/dist-configure.php includes/configure.php
 sudo mv admin/includes/dist-configure.php admin/includes/includes/configure.php
 
 sudo chmod -R 777 /var/www/html/$hostname
-sudo chmod 644 /var/www/html/$hostname/includes/configure.php
-sudo chmod 644 /var/www/html/$hostname/admin/includes/configure.php
 
 sudo systemctl restart nginx 
 sudo systemctl restart php7.4-fpm
